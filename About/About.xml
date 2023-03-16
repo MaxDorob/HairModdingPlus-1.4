@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<packageId>Butterfish.HairModdingPlus</packageId>
-	<name>Hair Modding Plus</name>
-	<author>Butterfish</author>
+	<name>Hair Modding Plus (continued)</name>
+	<author>Butterfish, Shashlichnik ;p (aka Шашлычник ;р)</author>
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
 	<description>
-This mod enables rendering of a hair texture behind a pawn, as well as enabling the use of alpha masks on hair.
-		
-Visit https://github.com/TheButterfish/HairModdingPlus for more information.
-	</description>
+    This mod enables rendering of a hair texture behind a pawn, as well as enabling the use of alpha masks on hair.
+
+    Visit https://github.com/MaxDorob/HairModdingPlus-1.4 for more information.
+  </description>
 	<modDependencies>
     <li>
         <packageId>brrainz.harmony</packageId>
@@ -32,5 +32,5 @@ Visit https://github.com/TheButterfish/HairModdingPlus for more information.
 		<li>showhair.kv.rw</li>
 		<li>velc.HatsDisplaySelection</li>
 	</loadAfter>
-	<url>https://github.com/TheButterfish/HairModdingPlus</url>
+	<url>https://github.com/MaxDorob/HairModdingPlus-1.4</url>
 </ModMetaData>
