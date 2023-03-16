@@ -1,0 +1,11 @@
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\Source\obj\Debug\ButterfishHairModdingPlus.csproj.AssemblyReference.cache
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\Source\obj\Debug\ButterfishHairModdingPlus.csproj.CoreCompileInputs.cache
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\Assemblies\ButterfishHairModdingPlus.dll
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\Assemblies\ButterfishHairModdingPlus.pdb
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\Source\obj\Debug\ButterfishHairModdingPlus.csproj.CopyComplete
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\Source\obj\Debug\ButterfishHairModdingPlus.dll
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\Source\obj\Debug\ButterfishHairModdingPlus.pdb
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\1.4\Assemblies\ButterfishHairModdingPlus.dll
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\1.4\Assemblies\ButterfishHairModdingPlus.pdb
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\v1.4\Assemblies\ButterfishHairModdingPlus.dll
+H:\SteamLibrary\steamapps\common\RimWorld\Mods\HairModdingPlus-1.4\v1.4\Assemblies\ButterfishHairModdingPlus.pdb

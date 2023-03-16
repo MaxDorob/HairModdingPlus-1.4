@@ -40,7 +40,7 @@ namespace ButterfishHairModdingPlus
                         {
                             hairColor2 = comp.HairColorTwoExpo.hairColor2;
                         }
-                        mat = GraphicDatabase.Get<Graphic_Multi_BHair>(texPath, ShaderDatabase.CutoutComplex, Vector2.one, pawn.story.hairColor, hairColor2).MatAt(facing);
+                        mat = GraphicDatabase.Get<Graphic_Multi_BHair>(texPath, ShaderDatabase.CutoutComplex, Vector2.one, pawn.story.HairColor, hairColor2).MatAt(facing);
                     }
                 }
             }

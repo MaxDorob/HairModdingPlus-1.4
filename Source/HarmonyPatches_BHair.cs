@@ -113,46 +113,46 @@ namespace ButterfishHairModdingPlus
             }
             catch (TypeLoadException) { }
 
-            try
-            {
-                ((Action)(() =>
-                {
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "children.and.pregnancy"))
-                    {
-                        loadedRimWorldChildren = true;
+            //try
+            //{
+            //    ((Action)(() =>
+            //    {
+            //        if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "children.and.pregnancy"))
+            //        {
+            //            loadedRimWorldChildren = true;
 
-                        harmony.Patch(original: AccessTools.Method(type: typeof(RimWorldChildren.PawnRenderer_RenderPawnInternal_Patch),
-                                                                   name: "GetHairMesh"),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_RimWorldChildren),
-                                                                 methodName: "RCCompat_CopyModifiedPawnHairMesh"));
-                    }
-                }))();
-            }
-            catch (TypeLoadException) { }
+            //            harmony.Patch(original: AccessTools.Method(type: typeof(RimWorldChildren.PawnRenderer_RenderPawnInternal_Patch),
+            //                                                       name: "GetHairMesh"),
+            //                          prefix: null,
+            //                          postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_RimWorldChildren),
+            //                                                     methodName: "RCCompat_CopyModifiedPawnHairMesh"));
+            //        }
+            //    }))();
+            //}
+            //catch (TypeLoadException) { }
 
-            try
-            {
-                ((Action)(() =>
-                {
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "babies.and.children.continued"))
-                    {
-                        loadedBabiesAndChildren = true;
-                    }
+            //try
+            //{
+            //    ((Action)(() =>
+            //    {
+            //        if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "babies.and.children.continued"))
+            //        {
+            //            loadedBabiesAndChildren = true;
+            //        }
 
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "babies.and.children.continued.13"))
-                    {
-                        loadedBabiesAndChildren = true;
+            //        if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "babies.and.children.continued.13"))
+            //        {
+            //            loadedBabiesAndChildren = true;
 
-                        harmony.Patch(original: AccessTools.Method(type: typeof(BabiesAndChildren.Harmony.ChildrenSizePatch),
-                                                                   name: "PawnRenderer_DrawHairHead_Patch"),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_BabiesAndChildren),
-                                                                 methodName: "BCCompat_CopyModifiedPawnHairMesh"));
-                    }
-                }))();
-            }
-            catch (TypeLoadException) { }
+            //            harmony.Patch(original: AccessTools.Method(type: typeof(BabiesAndChildren.Harmony.ChildrenSizePatch),
+            //                                                       name: "PawnRenderer_DrawHairHead_Patch"),
+            //                          prefix: null,
+            //                          postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_BabiesAndChildren),
+            //                                                     methodName: "BCCompat_CopyModifiedPawnHairMesh"));
+            //        }
+            //    }))();
+            //}
+            //catch (TypeLoadException) { }
 
             try
             {
@@ -178,38 +178,38 @@ namespace ButterfishHairModdingPlus
             }
             catch (TypeLoadException) { }
 
-            try
-            {
-                ((Action)(() =>
-                {
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "killface.facialstuff"))
-                    {
-                        harmony.Patch(original: AccessTools.Method(type: typeof(FacialStuff.CompBodyAnimator),
-                                                                   name: "DrawBody"),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_FacialStuff),
-                                                                 methodName: "FSCompat_GetBaseDrawLocY"));
+            //try
+            //{
+            //    ((Action)(() =>
+            //    {
+            //        if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "killface.facialstuff"))
+            //        {
+            //            harmony.Patch(original: AccessTools.Method(type: typeof(FacialStuff.CompBodyAnimator),
+            //                                                       name: "DrawBody"),
+            //                          prefix: null,
+            //                          postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_FacialStuff),
+            //                                                     methodName: "FSCompat_GetBaseDrawLocY"));
 
-                        harmony.Patch(original: AccessTools.Method(type: typeof(FacialStuff.HumanHeadDrawer),
-                                                                   name: "DrawHairAndHeadGear",
-                                                                   parameters: new Type[] { typeof(Vector3), typeof(Vector3), typeof(RotDrawMode), typeof(Quaternion), typeof(bool), typeof(bool), typeof(Vector3) } ),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_FacialStuff),
-                                                                 methodName: "FSCompat_DrawBackHairLayer"));
+            //            harmony.Patch(original: AccessTools.Method(type: typeof(FacialStuff.HumanHeadDrawer),
+            //                                                       name: "DrawHairAndHeadGear",
+            //                                                       parameters: new Type[] { typeof(Vector3), typeof(Vector3), typeof(RotDrawMode), typeof(Quaternion), typeof(bool), typeof(bool), typeof(Vector3) } ),
+            //                          prefix: null,
+            //                          postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_FacialStuff),
+            //                                                     methodName: "FSCompat_DrawBackHairLayer"));
 
-                        harmony.Unpatch(original: AccessTools.Method(type: typeof(PawnRenderer),
-                                                                     name: "RenderPawnInternal"),
-                                        type: HarmonyPatchType.Prefix,
-                                        harmonyID: "butterfish.hairmoddingplus");
+            //            harmony.Unpatch(original: AccessTools.Method(type: typeof(PawnRenderer),
+            //                                                         name: "RenderPawnInternal"),
+            //                            type: HarmonyPatchType.Prefix,
+            //                            harmonyID: "butterfish.hairmoddingplus");
 
-                        harmony.Unpatch(original: AccessTools.Method(type: typeof(PawnRenderer),
-                                                                     name: "DrawHeadHair"),
-                                        type: HarmonyPatchType.Postfix,
-                                        harmonyID: "butterfish.hairmoddingplus");
-                    }
-                }))();
-            }
-            catch (TypeLoadException) { }
+            //            harmony.Unpatch(original: AccessTools.Method(type: typeof(PawnRenderer),
+            //                                                         name: "DrawHeadHair"),
+            //                            type: HarmonyPatchType.Postfix,
+            //                            harmonyID: "butterfish.hairmoddingplus");
+            //        }
+            //    }))();
+            //}
+            //catch (TypeLoadException) { }
 
             try
             {

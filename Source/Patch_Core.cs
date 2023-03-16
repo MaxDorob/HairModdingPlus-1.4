@@ -13,14 +13,14 @@ namespace ButterfishHairModdingPlus
         {
             if (__instance.pawn.RaceProps.Humanlike)
             {
-                if (HarmonyPatches_BHair.loadedBabiesAndChildren)
-                {
-                    if (Patch_BabiesAndChildren.BCCompat_IsYoungerThanChild(__instance.pawn))
-                    {
-                        __instance.hairGraphic = GraphicDatabase.Get<Graphic_Multi>("Things/Pawn/Humanlike/null", ShaderDatabase.Cutout, Vector2.one, Color.white);
-                        return;
-                    }
-                }
+                //if (HarmonyPatches_BHair.loadedBabiesAndChildren)
+                //{
+                //    if (Patch_BabiesAndChildren.BCCompat_IsYoungerThanChild(__instance.pawn))
+                //    {
+                //        __instance.hairGraphic = GraphicDatabase.Get<Graphic_Multi>("Things/Pawn/Humanlike/null", ShaderDatabase.Cutout, Vector2.one, Color.white);
+                //        return;
+                //    }
+                //}
 
                 string hairTexturePath = __instance.pawn.story.hairDef.texPath;
 
@@ -46,7 +46,7 @@ namespace ButterfishHairModdingPlus
                     hairTexturePath += Compat_GradientHair.GHCompat_TryGetGradientPath(__instance.pawn);
                 }
 
-                __instance.hairGraphic = GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.hairColor, hairColor2);
+                __instance.hairGraphic = GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.HairColor, hairColor2);
             }
         }
 
@@ -166,21 +166,21 @@ namespace ButterfishHairModdingPlus
                             hairMesh = Patch_AlienRace.ARCompat_GetCopiedMesh();
                         }
 
-                        if (HarmonyPatches_BHair.loadedBabiesAndChildren)
-                        {
-                            //use modified hair mesh after processed by Babies And Children
-                            hairMesh = Patch_BabiesAndChildren.BCCompat_GetCopiedMesh();
-                        }
+                        //if (HarmonyPatches_BHair.loadedBabiesAndChildren)
+                        //{
+                        //    //use modified hair mesh after processed by Babies And Children
+                        //    hairMesh = Patch_BabiesAndChildren.BCCompat_GetCopiedMesh();
+                        //}
 
-                        if (HarmonyPatches_BHair.loadedRimWorldChildren)
-                        {
-                            //use modified hair mesh after processed by RimWorldChildren
-                            hairMesh = Patch_RimWorldChildren.RCCompat_GetCopiedMesh();
-                            hairMat = Patch_RimWorldChildren.RCCompat_ModifyHairForChild(hairMat, graphics.pawn);
+                        //if (HarmonyPatches_BHair.loadedRimWorldChildren)
+                        //{
+                        //    //use modified hair mesh after processed by RimWorldChildren
+                        //    hairMesh = Patch_RimWorldChildren.RCCompat_GetCopiedMesh();
+                        //    hairMat = Patch_RimWorldChildren.RCCompat_ModifyHairForChild(hairMat, graphics.pawn);
 
-                            //alternate calling method for manual calling
-                            //hairMesh = Compat_RimWorldChildren.RCCompat_GetModifiedPawnHairMesh(graphics, graphics.pawn, headFacing);
-                        }
+                        //    //alternate calling method for manual calling
+                        //    //hairMesh = Compat_RimWorldChildren.RCCompat_GetModifiedPawnHairMesh(graphics, graphics.pawn, headFacing);
+                        //}
 
                         if (hairMesh == null)
                         {
