@@ -101,13 +101,16 @@ namespace ButterfishHairModdingPlus
                 {
                     if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "erdelf.humanoidalienraces"))
                     {
-                        loadedAlienRace = true;
 
-                        harmony.Patch(original: AccessTools.Method(type: typeof(AlienRace.HarmonyPatches),
-                                                                   name: "GetPawnHairMesh"),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_AlienRace),
-                                                                 methodName: "ARCompat_CopyModifiedPawnHairMesh"));
+                        //Log.Message("Trying to patch");
+                        //loadedAlienRace = true;
+
+                        //harmony.Patch(original: AccessTools.Method(type: typeof(AlienRace.HarmonyPatches),
+                        //                                           name: "GetPawnHairMesh"),//Now, there is no such method. Why? I dont know. No method - no problemo :)
+                        //              prefix: null,
+                        //              postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_AlienRace),
+                        //                                         methodName: "ARCompat_CopyModifiedPawnHairMesh"));
+                        //Log.Message("Patched");
                     }
                 }))();
             }
