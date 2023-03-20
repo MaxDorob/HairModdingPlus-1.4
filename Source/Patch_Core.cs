@@ -45,8 +45,8 @@ namespace ButterfishHairModdingPlus
                     hairTexturePath += ":" + gradientColor.a.ToString() + ":" + gradientColor.r.ToString() + ":" + gradientColor.g.ToString() + ":" + gradientColor.b.ToString();
                     hairTexturePath += Compat_GradientHair.GHCompat_TryGetGradientPath(__instance.pawn);
                 }
-
-                __instance.hairGraphic = GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.HairColor, hairColor2);
+                
+                __instance.hairGraphic =hairTexturePath==null?null: GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.HairColor, hairColor2);
             }
         }
 
