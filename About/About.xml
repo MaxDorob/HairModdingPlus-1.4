@@ -30,6 +30,9 @@
 		<li>killface.facialstuff</li>
 		<li>automatic.gradienthair</li>
 		<li>showhair.kv.rw</li>
+    <li>cat2002.showhair</li>
+    <li>Dubwise.DubsBadHygiene</li>
+    <li>Dubwise.DubsBadHygiene.Lite</li>
 		<li>velc.HatsDisplaySelection</li>
 	</loadAfter>
 	<url>https://github.com/MaxDorob/HairModdingPlus-1.4</url>

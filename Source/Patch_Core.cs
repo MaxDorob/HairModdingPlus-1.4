@@ -98,7 +98,6 @@ namespace ButterfishHairModdingPlus
         {
             PawnGraphicSet graphics = __instance.graphics;
             Graphic_Multi_BHair hairGraphicExtended = graphics.hairGraphic as Graphic_Multi_BHair;
-
             //check if ShellFullyCoversHead
             bool shellFullyCoversHead = false;
             List<ApparelGraphicRecord> apparelGraphics = graphics.apparelGraphics;
@@ -118,7 +117,12 @@ namespace ButterfishHairModdingPlus
                 if (hairMat != null)
                 {
                     Vector3 onHeadLoc = rootLoc + headOffset;
-
+                    if (HarmonyPatches_BHair.loadedDubsBH)
+                    {
+                        //Somehow Dubs accessing private variable (dnspy shows Pawn pawn = __instance.pawn) without Traverse/Reflection. Instresting
+                        Pawn pawn = new Traverse(__instance).Field("pawn").GetValue() as Pawn;
+                        Patch_DubsBadHygiene.ChangeOffsetOfBackLayer(pawn, ref onHeadLoc);
+                    }
                     bool hideHair = false;
                     if (flags.FlagSet(PawnRenderFlags.Headgear) && (!flags.FlagSet(PawnRenderFlags.Portrait) || !Prefs.HatsOnlyOnMap || flags.FlagSet(PawnRenderFlags.StylingStation)))
                     {

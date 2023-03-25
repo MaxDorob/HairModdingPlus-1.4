@@ -44,7 +44,8 @@ namespace ButterfishHairModdingPlus
                     }
                 }
             }
-            catch (TypeLoadException) { }
+            catch (TypeLoadException) {
+            }
 
             __result = (mat != null);
             return false;    //skip original TryGetCustomHairMat method

@@ -17,6 +17,7 @@ namespace ButterfishHairModdingPlus
         public static bool loadedGradientHair = false;
         public static bool loadedShowHair = false;
         public static bool loadedHatDisplaySelection = false;
+        public static bool loadedDubsBH = false;
 
         public static bool colonistBarFirstDraw = true;
 
@@ -161,21 +162,32 @@ namespace ButterfishHairModdingPlus
             {
                 ((Action)(() =>
                 {
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "showhair.kv.rw"))
+                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "cat2002.showhair"))
                     {
                         loadedShowHair = true;
-
-                        harmony.Patch(original: AccessTools.Method(type: typeof(ShowHair.Patch_PawnRenderer_DrawHeadHair),
-                                                                   name: "HideHats"),
-                                      prefix: null,
-                                      postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_ShowHair),
-                                                                 methodName: "SHCompat_CopyHideHair"));
+                        //Now there is no such method
+                        //harmony.Patch(original: AccessTools.Method(type: typeof(ShowHair.Patch_PawnRenderer_DrawHeadHair),
+                        //                                           name: "HideHats"),
+                        //              prefix: null,
+                        //              postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_ShowHair),
+                        //                                         methodName: "SHCompat_CopyHideHair"));
 
                         harmony.Patch(original: AccessTools.Method(type: typeof(ShowHair.HairUtilityFactory).GetNestedType("HairUtility", BindingFlags.Static | BindingFlags.NonPublic),
                                                                    name: "TryGetCustomHairMat"),
                                       prefix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_ShowHair),
                                                                 methodName: "SHCompat_OverrideTryGetCustomHairMat"),
                                       postfix: null);
+                    }
+                }))();
+            }
+            catch (TypeLoadException) { }
+            try
+            {
+                ((Action)(() =>
+                {
+                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "").ToLower().Contains("DubsBadHygiene".ToLower())))
+                    {
+                        loadedDubsBH = true;
                     }
                 }))();
             }

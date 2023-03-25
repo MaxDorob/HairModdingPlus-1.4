@@ -38,6 +38,10 @@
       <HintPath>OtherAssemblies\AlienRace.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="BadHygiene">
+      <HintPath>OtherAssemblies\BadHygiene.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="EdBPrepareCarefully, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>OtherAssemblies\EdBPrepareCarefully.dll</HintPath>
@@ -69,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compat_ShowHair.cs" />
+    <Compile Include="Patch_DubsBadHygiene.cs" />
     <Compile Include="Patch_HatDisplaySelection.cs" />
     <Compile Include="Patch_ShowHair.cs" />
     <Compile Include="Compat_GradientHair.cs" />
