@@ -8,7 +8,7 @@ namespace ButterfishHairModdingPlus
 {
     class Patch_Core
     {
-        [HarmonyAfter(new string[] { "babies.and.children.continued", "babies.and.children.continued.13", "children.and.pregnancy" })]
+        [HarmonyAfter(new string[] { "babies.and.children.continued", "babies.and.children.continued.13", "children.and.pregnancy", "com.github.automatic1111.gradienthair" })]
         public static void UseModifiedGraphicParams(PawnGraphicSet __instance)
         {
             if (__instance.pawn.RaceProps.Humanlike)
@@ -87,7 +87,7 @@ namespace ButterfishHairModdingPlus
             */
         }
 
-        [HarmonyAfter(new string[] { "babies.and.children.continued", "babies.and.children.continued.13", "children.and.pregnancy" })]
+        [HarmonyAfter(new string[] { "babies.and.children.continued", "babies.and.children.continued.13", "children.and.pregnancy", "com.github.automatic1111.gradienthair" })]
         public static void DrawBackHairLayer(PawnRenderer __instance,
                                              Vector3 rootLoc,
                                              Vector3 headOffset,

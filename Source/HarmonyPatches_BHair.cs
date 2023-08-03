@@ -38,6 +38,12 @@ namespace ButterfishHairModdingPlus
                           postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_Core),
                                                      methodName: "UseModifiedGraphicParams"));
 
+            harmony.Patch(original: AccessTools.Method(type: typeof(PawnGraphicSet),
+                                                       name: "CalculateHairMats"),
+                          prefix: null,
+                          postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_Core),
+                                                     methodName: "UseModifiedGraphicParams"));
+
             harmony.Patch(original: AccessTools.Method(type: typeof(PawnRenderer),
                                                        name: "RenderPawnInternal"), 
                           prefix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_Core),
@@ -254,7 +260,7 @@ namespace ButterfishHairModdingPlus
             if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId.Replace("_steam", "").Replace("_copy", "") == "automatic.gradienthair"))
             {
                 loadedGradientHair = true;
-
+                const string gradientHarmony = "com.github.automatic1111.gradienthair";
                 harmony.Patch(original: AccessTools.Method(type: typeof(Page_ConfigureStartingPawns),
                                                            name: "DrawPawnList"),
                           prefix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_Core),
@@ -266,6 +272,8 @@ namespace ButterfishHairModdingPlus
                           prefix: null,
                           postfix: new HarmonyMethod(methodType: typeof(ButterfishHairModdingPlus.Patch_Core),
                                                      methodName: "OnLoadPortraitsBugfix"));
+                harmony.Unpatch(AccessTools.Method(typeof(PawnGraphicSet), nameof(PawnGraphicSet.ResolveApparelGraphics)), HarmonyPatchType.Postfix, gradientHarmony);
+                harmony.Unpatch(AccessTools.Method(typeof(PawnGraphicSet), nameof(PawnGraphicSet.CalculateHairMats)), HarmonyPatchType.Postfix, gradientHarmony);
             }
 
         }
