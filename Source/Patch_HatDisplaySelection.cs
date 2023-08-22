@@ -29,6 +29,10 @@ namespace ButterfishHairModdingPlus
                 if (t_Setting != null)
                 {
                     int hatIndex = HatDisplaySelection.Setting.savedHats.IndexOf(hatDefName);
+                    if (hatIndex == -1)
+                    {
+                        return true;
+                    }
 
                     bool isDrafted = false;
                     if (pawn.Faction == Faction.OfPlayer && pawn.RaceProps.Humanlike)
