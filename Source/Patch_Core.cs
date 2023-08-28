@@ -22,7 +22,7 @@ namespace ButterfishHairModdingPlus
                 //    }
                 //}
 
-                string hairTexturePath = __instance.pawn.story.hairDef.texPath;
+                string hairTexturePath = __instance.pawn.story.hairDef?.texPath ?? string.Empty;
 
                 /*if (hairTexturePath.Length > 28)
                 {
@@ -39,14 +39,14 @@ namespace ButterfishHairModdingPlus
                     hairColor2 = comp.HairColorTwoExpo.hairColor2;
                 }
 
-                if (HarmonyPatches_BHair.loadedGradientHair)
+                if (HarmonyPatches_BHair.loadedGradientHair && !hairTexturePath.NullOrEmpty())
                 {
                     Color gradientColor = Compat_GradientHair.GHCompat_TryGetGradientColor(__instance.pawn);
                     hairTexturePath += ":" + gradientColor.a.ToString() + ":" + gradientColor.r.ToString() + ":" + gradientColor.g.ToString() + ":" + gradientColor.b.ToString();
                     hairTexturePath += Compat_GradientHair.GHCompat_TryGetGradientPath(__instance.pawn);
                 }
                 
-                __instance.hairGraphic =hairTexturePath==null?null: GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.HairColor, hairColor2);
+                __instance.hairGraphic =hairTexturePath.NullOrEmpty()?null: GraphicDatabase.Get<Graphic_Multi_BHair>(hairTexturePath, ShaderDatabase.CutoutComplex, Vector2.one, __instance.pawn.story.HairColor, hairColor2);
             }
         }
 
