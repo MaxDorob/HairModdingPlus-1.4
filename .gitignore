@@ -1,0 +1,5 @@
+**/obj/
+**/.vs/
+.cache
+/Source/1.4/obj/Debug/ButterfishHairModdingPlus.csproj.AssemblyReference.cache
+/Source/1.4/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
