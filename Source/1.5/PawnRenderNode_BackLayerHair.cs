@@ -25,8 +25,7 @@ namespace Shashlichnik.HairModdingPlus
         static string[] directions = { "south", "north", "east", "west" };
         public override Graphic GraphicFor(Pawn pawn)
         {
-            Log.Message($"Graphic for {pawn}");
-            if (!directions.Any(x => ContentFinder<Texture2D>.Get($"{TexPathFor(pawn)}_{x}") != null)) return null;
+            if (!directions.Any(x => ContentFinder<Texture2D>.Get($"{TexPathFor(pawn)}_{x}", false) != null)) return null;
             return base.GraphicFor(pawn);
         }
     }
