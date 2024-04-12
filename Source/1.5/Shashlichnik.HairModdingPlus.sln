@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shashlichnik.HairModdingPlus", "Shashlichnik.HairModdingPlus.csproj", "{DA63002D-A07C-4540-B8AC-0E75D62FC5E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA63002D-A07C-4540-B8AC-0E75D62FC5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA63002D-A07C-4540-B8AC-0E75D62FC5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA63002D-A07C-4540-B8AC-0E75D62FC5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA63002D-A07C-4540-B8AC-0E75D62FC5E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CF200A8-BA2A-4E2A-969A-D8171FFE232D}
+	EndGlobalSection
+EndGlobal

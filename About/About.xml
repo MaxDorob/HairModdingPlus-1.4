@@ -5,6 +5,7 @@
 	<author>Butterfish, Shashlichnik ;p (aka Шашлычник ;р)</author>
 	<supportedVersions>
 		<li>1.4</li>
+    <li>1.5</li>
 	</supportedVersions>
 	<description>
     This mod enables rendering of a hair texture behind a pawn, as well as enabling the use of alpha masks on hair.

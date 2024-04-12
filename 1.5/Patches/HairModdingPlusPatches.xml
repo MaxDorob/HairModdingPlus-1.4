@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]/children</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]</xpath>
+			<value>
+        <children>
+          <li>
+            <debugLabel>Back hair</debugLabel>
+            <nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_BackLayerHair</nodeClass>
+            <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+            <rotDrawMode>Fresh, Rotting</rotDrawMode>
+            <colorType>Hair</colorType>
+            <skipFlag>Hair</skipFlag>
+            <baseLayer>10</baseLayer>
+          </li>
+				</children>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+      <xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]/children</xpath>
+			<value>
+        <li>
+          <debugLabel>Back hair</debugLabel>
+          <nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_BackLayerHair</nodeClass>
+          <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+          <rotDrawMode>Fresh, Rotting</rotDrawMode>
+          <colorType>Hair</colorType>
+          <skipFlag>Hair</skipFlag>
+          <baseLayer>10</baseLayer>
+        </li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>
+
+
