@@ -147,17 +147,17 @@ namespace ButterfishHairModdingPlus
 
             //look for back layer textures
             Texture2D[] backLayerArray = new Texture2D[4];
-            backLayerArray[0] = ContentFinder<Texture2D>.Get(path + "_north_back", reportFailure: false);
-            backLayerArray[1] = ContentFinder<Texture2D>.Get(path + "_east_back", reportFailure: false);
-            backLayerArray[2] = ContentFinder<Texture2D>.Get(path + "_south_back", reportFailure: false);
-            backLayerArray[3] = ContentFinder<Texture2D>.Get(path + "_west_back", reportFailure: false);
+            backLayerArray[0] = ContentFinder<Texture2D>.Get(path + "_back_north", reportFailure: false)    ?? ContentFinder<Texture2D>.Get(path + "_north_back", reportFailure: false);
+            backLayerArray[1] = ContentFinder<Texture2D>.Get(path + "_back_east", reportFailure: false)     ?? ContentFinder<Texture2D>.Get(path + "_east_back", reportFailure: false);
+            backLayerArray[2] = ContentFinder<Texture2D>.Get(path + "_back_south", reportFailure: false)    ?? ContentFinder<Texture2D>.Get(path + "_south_back", reportFailure: false);
+            backLayerArray[3] = ContentFinder<Texture2D>.Get(path + "_back_west", reportFailure: false)     ?? ContentFinder<Texture2D>.Get(path + "_west_back", reportFailure: false);
 
             //look for back layer masks
             Texture2D[] backLayerMaskArray = new Texture2D[backLayerArray.Length];
-            backLayerMaskArray[0] = ContentFinder<Texture2D>.Get(path + "_north_backm", reportFailure: false);
-            backLayerMaskArray[1] = ContentFinder<Texture2D>.Get(path + "_east_backm", reportFailure: false);
-            backLayerMaskArray[2] = ContentFinder<Texture2D>.Get(path + "_south_backm", reportFailure: false);
-            backLayerMaskArray[3] = ContentFinder<Texture2D>.Get(path + "_west_backm", reportFailure: false);
+            backLayerMaskArray[0] = ContentFinder<Texture2D>.Get(path + "_back_northm", reportFailure: false)  ?? ContentFinder<Texture2D>.Get(path + "_north_backm", reportFailure: false);
+            backLayerMaskArray[1] = ContentFinder<Texture2D>.Get(path + "_back_eastm", reportFailure: false)   ?? ContentFinder<Texture2D>.Get(path + "_east_backm", reportFailure: false);
+            backLayerMaskArray[2] = ContentFinder<Texture2D>.Get(path + "_back_southm", reportFailure: false)  ?? ContentFinder<Texture2D>.Get(path + "_south_backm", reportFailure: false);
+            backLayerMaskArray[3] = ContentFinder<Texture2D>.Get(path + "_back_westm", reportFailure: false)   ?? ContentFinder<Texture2D>.Get(path + "_west_backm", reportFailure: false);
 
             if (hasGradient)
             {
