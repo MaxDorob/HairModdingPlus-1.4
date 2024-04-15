@@ -14,7 +14,7 @@
             <rotDrawMode>Fresh, Rotting</rotDrawMode>
             <colorType>Hair</colorType>
             <skipFlag>Hair</skipFlag>
-            <baseLayer>-25</baseLayer>
+            <baseLayer>-2</baseLayer>
           </li>
 				</children>
 			</value>
@@ -29,7 +29,7 @@
           <rotDrawMode>Fresh, Rotting</rotDrawMode>
           <colorType>Hair</colorType>
           <skipFlag>Hair</skipFlag>
-          <baseLayer>-25</baseLayer>
+          <baseLayer>-2</baseLayer>
         </li>
 			</value>
 		</match>
