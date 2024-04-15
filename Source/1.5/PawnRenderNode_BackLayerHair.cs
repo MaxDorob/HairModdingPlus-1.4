@@ -32,6 +32,6 @@ namespace Shashlichnik.HairModdingPlus
             ShaderTypeDef overrideShaderTypeDef = hairExt?.overrideShaderTypeDef ?? hair.overrideShaderTypeDef;
             return GraphicFor(texPath, overrideShaderTypeDef, ColorFor(pawn));
         }
-        public virtual Graphic GraphicFor(string texPath, ShaderTypeDef overrideShaderTypeDef, Color color) => GraphicDatabase.Get<Graphic_Multi>(texPath, overrideShaderTypeDef?.Shader ?? ShaderDatabase.CutoutHair, Vector2.one, color);
+        public virtual Graphic GraphicFor(string texPath, ShaderTypeDef overrideShaderTypeDef, Color color) => GraphicDatabase.Get<Graphic_MultiNoFlip>(texPath, overrideShaderTypeDef?.Shader ?? ShaderDatabase.CutoutHair, Vector2.one, color);
     }
 }

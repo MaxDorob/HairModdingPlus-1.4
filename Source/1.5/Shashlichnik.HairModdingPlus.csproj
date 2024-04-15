@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphic_MultiNoFlip.cs" />
     <Compile Include="HairDefExt.cs" />
     <Compile Include="HairModdingPlus.cs" />
     <Compile Include="PawnRenderNode_BackLayerHair.cs" />
