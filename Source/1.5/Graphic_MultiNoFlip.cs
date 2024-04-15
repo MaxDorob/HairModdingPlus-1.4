@@ -19,10 +19,10 @@ namespace Shashlichnik.HairModdingPlus
             this.colorTwo = req.colorTwo;
             this.drawSize = req.drawSize;
             Texture2D[] array = new Texture2D[this.mats.Length];
-            array[0] = ContentFinder<Texture2D>.Get(req.path + "_north", false);
-            array[1] = ContentFinder<Texture2D>.Get(req.path + "_east", false);
-            array[2] = ContentFinder<Texture2D>.Get(req.path + "_south", false);
-            array[3] = ContentFinder<Texture2D>.Get(req.path + "_west", false);
+            array[0] = ContentFinder<Texture2D>.Get(path + "_north", false) ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_north_back", false) : null);
+            array[1] = ContentFinder<Texture2D>.Get(path + "_east", false)  ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_east_back", false) : null);
+            array[2] = ContentFinder<Texture2D>.Get(path + "_south", false) ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_south_back", false) : null);
+            array[3] = ContentFinder<Texture2D>.Get(path + "_west", false)  ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_north_back", false) : null);
             if (array[0] == null)
             {
                 array[0] = ContentFinder<Texture2D>.Get(req.path, false);
@@ -37,10 +37,10 @@ namespace Shashlichnik.HairModdingPlus
             {
                 string str = this.maskPath.NullOrEmpty() ? this.path : this.maskPath;
                 string str2 = this.maskPath.NullOrEmpty() ? "m" : string.Empty;
-                array2[0] = ContentFinder<Texture2D>.Get(str + "_north" + str2, false);
-                array2[1] = ContentFinder<Texture2D>.Get(str + "_east" + str2, false);
-                array2[2] = ContentFinder<Texture2D>.Get(str + "_south" + str2, false);
-                array2[3] = ContentFinder<Texture2D>.Get(str + "_west" + str2, false);
+                array2[0] = ContentFinder<Texture2D>.Get(str + "_north" + str2, false)  ?? (str.Contains("_back") ? ContentFinder<Texture2D>.Get(str.Replace("_back", "") + "_north_backm", false) : null);
+                array2[1] = ContentFinder<Texture2D>.Get(str + "_east" + str2, false)   ?? (str.Contains("_back") ? ContentFinder<Texture2D>.Get(str.Replace("_back", "") + "_east_backm", false) : null);
+                array2[2] = ContentFinder<Texture2D>.Get(str + "_south" + str2, false)  ?? (str.Contains("_back") ? ContentFinder<Texture2D>.Get(str.Replace("_back", "") + "_south_backm", false) : null);
+                array2[3] = ContentFinder<Texture2D>.Get(str + "_west" + str2, false)   ?? (str.Contains("_back") ? ContentFinder<Texture2D>.Get(str.Replace("_back", "") + "_west_backm", false) : null);
             }
             for (int i = 0; i < this.mats.Length; i++)
             {

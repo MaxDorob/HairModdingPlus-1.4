@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,22 @@ namespace Shashlichnik.HairModdingPlus
         public PawnRenderNode_BackLayerHair(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {
         }
+        static HashSet<HairDef> HairBackLayer = new HashSet<HairDef>(DefDatabase<HairDef>.DefCount);
+        static PawnRenderNode_BackLayerHair()
+        {
+            foreach (var hair in DefDatabase<HairDef>.AllDefs)
+            {
+                var hairExt = hair.GetModExtension<HairDefExt>();
+                if (hairExt?.noGraphics ?? false)
+                {
+                    continue;
+                }
+                if (directions.Any(dir => ContentFinder<Texture2D>.Get($"{hair.texPath}_back_{dir}", false) != null || ContentFinder<Texture2D>.Get($"{hair.texPath}_{dir}_back", false) != null))
+                {
+                    HairBackLayer.Add(hair);
+                }
+            }
+        }
         protected override string TexPathFor(Pawn pawn)
         {
             var hair = pawn.story.hairDef;
@@ -26,7 +43,7 @@ namespace Shashlichnik.HairModdingPlus
             if (hair == null || pawn.DevelopmentalStage.Baby() || pawn.DevelopmentalStage.Newborn()) return null;
             var hairExt = hair.GetModExtension<HairDefExt>();
             if (hairExt != null && hairExt.noGraphics) return null;
-            if (!directions.Any(x => ContentFinder<Texture2D>.Get($"{TexPathFor(pawn)}_{x}", false) != null)) return null;
+            if (!HairBackLayer.Contains(hair)) return null;
             string texPath = TexPathFor(pawn);
             if (texPath == null) return null;
             ShaderTypeDef overrideShaderTypeDef = hairExt?.overrideShaderTypeDef ?? hair.overrideShaderTypeDef;
