@@ -46,7 +46,7 @@ namespace Shashlichnik.HairModdingPlus
             {
                 if (array[i] == null)
                 {
-                    mats[i] = BaseContent.BadMat;
+                    mats[i] = BaseContent.ClearMat;
                     continue;
                 }
                 MaterialRequest req2 = default(MaterialRequest);
