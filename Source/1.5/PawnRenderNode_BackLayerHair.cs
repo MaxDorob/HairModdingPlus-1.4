@@ -9,7 +9,7 @@ using Verse;
 
 namespace Shashlichnik.HairModdingPlus
 {
-    public class PawnRenderNode_BackLayerHair : PawnRenderNode
+    public class PawnRenderNode_BackLayerHair : PawnRenderNode_Hair
     {
         public PawnRenderNode_BackLayerHair(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {
@@ -37,6 +37,7 @@ namespace Shashlichnik.HairModdingPlus
             return $"{hair.texPath}_back";
         }
         static string[] directions = { "south", "north", "east", "west" };
+
         public override Graphic GraphicFor(Pawn pawn)
         {
             var hair = pawn.story.hairDef;
