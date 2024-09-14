@@ -22,7 +22,7 @@ namespace Shashlichnik.HairModdingPlus
             array[0] = ContentFinder<Texture2D>.Get(path + "_north", false) ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_north_back", false) : null);
             array[1] = ContentFinder<Texture2D>.Get(path + "_east", false)  ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_east_back", false) : null);
             array[2] = ContentFinder<Texture2D>.Get(path + "_south", false) ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_south_back", false) : null);
-            array[3] = ContentFinder<Texture2D>.Get(path + "_west", false)  ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_north_back", false) : null);
+            array[3] = ContentFinder<Texture2D>.Get(path + "_west", false)  ?? (path.Contains("_back") ? ContentFinder<Texture2D>.Get(path.Replace("_back", "") + "_west_back", false) : null);
             if (array[0] == null)
             {
                 array[0] = ContentFinder<Texture2D>.Get(req.path, false);
