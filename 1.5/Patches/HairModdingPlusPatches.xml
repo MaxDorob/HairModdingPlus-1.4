@@ -6,33 +6,33 @@
 		<nomatch Class="PatchOperationAdd">
 			<xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]</xpath>
 			<value>
-        <children>
-          <li>
-            <debugLabel>Back hair</debugLabel>
-            <nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_BackLayerHair</nodeClass>
-            <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-            <rotDrawMode>Fresh, Rotting</rotDrawMode>
-            <colorType>Hair</colorType>
-            <skipFlag>Hair</skipFlag>
-            <baseLayer>-2</baseLayer>
-          </li>
-				</children>
+				<children/>
 			</value>
 		</nomatch>
-		<match Class="PatchOperationAdd">
-      <xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]/children</xpath>
-			<value>
-        <li>
-          <debugLabel>Back hair</debugLabel>
-          <nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_BackLayerHair</nodeClass>
-          <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-          <rotDrawMode>Fresh, Rotting</rotDrawMode>
-          <colorType>Hair</colorType>
-          <skipFlag>Hair</skipFlag>
-          <baseLayer>-2</baseLayer>
-        </li>
-			</value>
-		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/PawnRenderTreeDef[defName="Humanlike"]/root/children//li[debugLabel="Hair"]/children</xpath>
+		<value>
+			<li>
+				<debugLabel>Back hair</debugLabel>
+				<nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_BackLayerHair</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Hair</colorType>
+				<skipFlag>Hair</skipFlag>
+				<baseLayer>-2</baseLayer>
+			</li>
+			<li>
+				<debugLabel>Front hair</debugLabel>
+				<nodeClass>Shashlichnik.HairModdingPlus.PawnRenderNode_FrontLayerHair</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Hair</colorType>
+				<skipFlag>Hair</skipFlag>
+				<baseLayer>68</baseLayer>
+			</li>
+		</value>
 	</Operation>
 
 </Patch>

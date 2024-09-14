@@ -30,13 +30,14 @@ namespace Shashlichnik.HairModdingPlus
                 }
             }
         }
+        protected virtual IEnumerable<HairDef> HairsWithLayer => HairBackLayer;
         protected override string TexPathFor(Pawn pawn)
         {
             var hair = pawn.story.hairDef;
             if (hair?.texPath == null) return null;
             return $"{hair.texPath}_back";
         }
-        static string[] directions = { "south", "north", "east", "west" };
+        protected internal static string[] directions = { "south", "north", "east", "west" };
 
         public override Graphic GraphicFor(Pawn pawn)
         {
@@ -44,7 +45,7 @@ namespace Shashlichnik.HairModdingPlus
             if (hair == null || pawn.DevelopmentalStage.Baby() || pawn.DevelopmentalStage.Newborn()) return null;
             var hairExt = hair.GetModExtension<HairDefExt>();
             if (hairExt != null && hairExt.noGraphics) return null;
-            if (!HairBackLayer.Contains(hair)) return null;
+            if (!HairsWithLayer.Contains(hair)) return null;
             string texPath = TexPathFor(pawn);
             if (texPath == null) return null;
             ShaderTypeDef overrideShaderTypeDef = hairExt?.overrideShaderTypeDef ?? hair.overrideShaderTypeDef;

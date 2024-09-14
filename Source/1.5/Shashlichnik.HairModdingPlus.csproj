@@ -46,6 +46,7 @@
     <Compile Include="HairDefExt.cs" />
     <Compile Include="HairModdingPlus.cs" />
     <Compile Include="PawnRenderNode_BackLayerHair.cs" />
+    <Compile Include="PawnRenderNode_FrontLayerHair.cs" />
     <Compile Include="PawnRenderNode_HairPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
