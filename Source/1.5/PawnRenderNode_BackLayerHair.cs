@@ -37,6 +37,20 @@ namespace Shashlichnik.HairModdingPlus
             if (hair?.texPath == null) return null;
             return $"{hair.texPath}_back";
         }
+        public override Color ColorFor(Pawn pawn)
+        {
+            if (pawn.story?.hairDef?.GetModExtension<HairDefExt>()?.useSkinColor ?? false)
+            {
+                Color color = pawn.story.SkinColor;
+                color *= this.props.colorRGBPostFactor;
+                if (this.props.useRottenColor && pawn.Drawer.renderer.CurRotDrawMode == RotDrawMode.Rotting)
+                {
+                    color = PawnRenderUtility.GetRottenColor(color);
+                }
+                return color;
+            }
+            return base.ColorFor(pawn);
+        }
         protected internal static string[] directions = { "south", "north", "east", "west" };
 
         public override Graphic GraphicFor(Pawn pawn)

@@ -11,6 +11,7 @@ namespace Shashlichnik.HairModdingPlus
     public class HairDefExt : DefModExtension
     {
         public bool noGraphics = false;
+        public bool useSkinColor = false;
         public ShaderTypeDef overrideShaderTypeDef;
     }
 }
